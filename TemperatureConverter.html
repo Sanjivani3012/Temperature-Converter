@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Temperature Converter</title>
+    <style type="text/css">
+      .maindiv{
+        top: 30%;
+        height: 350px;
+        width: 500px;
+        background-color:#f3ebfc ;
+         align-items: center;
+         padding-top: 20px;
+         border-radius: 20px;
+         box-shadow: 0px 0px 10px;
+      }
+      button{
+        background-color:#57bff2 ;
+        border-radius: 20px;
+        height: 30px;
+        width: 100px;
+        font-weight: bold;
+      }
+
+      input{
+        height: 25px;
+      }
+      h2{
+        font-family: sans-serif;
+        font-size: 30px;
+        color: darkblue;
+        
+
+      }
+      label{
+         font-family: sans-serif;
+        font-size: 18px;
+        font-weight: bold;
+
+
+      }
+    </style>
+  </head>
+<body>
+
+  <div class="maindiv" align="center">
+    
+      <h2>Temperature Converter</h2>
+
+        <label for="celsius">Celsius:</label>
+        <input type="number" id="celsius" placeholder="Enter temp in Celsius"><br><br>
+        <button onclick="convertToFar()">Fahrenheit</button>
+        <p id="result"></p>
+
+        <label for="fahrenheit">Fahrenheit:</label>
+        <input type="number" id="fahrenheit" placeholder="Enter temp  in Fahrenheit"><br><br>
+        <button onclick="convertToCel()"> Celsius</button>
+        <p id="result2"></p>
+  </div>
+
+    <script>
+    function convertToFar() {
+        var celsiusTemp = parseFloat(document.getElementById("celsius").value);
+        var fahrenheitTemp = (celsiusTemp * 9/5) + 32;
+        document.getElementById("result").innerHTML = celsiusTemp + "°C is " + fahrenheitTemp.toFixed(2) + "°F";
+    }
+
+    function convertToCel() {
+        var fahrenheitTemp = parseFloat(document.getElementById("fahrenheit").value);
+        var celsiusTemp = (fahrenheitTemp - 32) * 5/9;
+        document.getElementById("result2").innerHTML = fahrenheitTemp + "°F is " + celsiusTemp.toFixed(2) + "°C";
+    }
+    </script>
+
+</body>
+</html>
